@@ -44,61 +44,13 @@ jobs:
 
       matrix:
         board: [
-          {"fqbn": "arduino:renesas_portenta:portenta_c33"},
           {"fqbn": "arduino:renesas_uno:minima"},
-          {"fqbn": "arduino:renesas_uno:unor4wifi"},
-          {"fqbn": "arduino-git:renesas:portenta_c33"},
           {"fqbn": "arduino-git:renesas:minima"},
-          {"fqbn": "arduino-git:renesas:unor4wifi"},
         ]
 
         # make board type-specific customizations to the matrix jobs
         include:
-          - board:
-              fqbn: "arduino:renesas_portenta:portenta_c33"
-            additional-sketch-paths: |
-              - libraries/WiFi
-              - libraries/UsbMsd
-              - libraries/UsbHostMsd
-              - libraries/Storage
-              - libraries/SSLClient
-              - libraries/SE05X
-              - libraries/Ethernet
-              - libraries/Arduino_CAN/examples/CAN1Read
-              - libraries/Arduino_CAN/examples/CAN1Write
-              - libraries/RTC/examples/RTC_NTPSync
-              - libraries/RTC/examples/RTC_Alarm
-              - libraries/SFU
-          - board:
-              fqbn: "arduino-git:renesas:portenta_c33"
-            additional-sketch-paths: |
-              - libraries/WiFi
-              - libraries/UsbMsd
-              - libraries/UsbHostMsd
-              - libraries/Storage
-              - libraries/SSLClient
-              - libraries/SE05X
-              - libraries/Ethernet
-              - libraries/Arduino_CAN/examples/CAN1Read
-              - libraries/Arduino_CAN/examples/CAN1Write
-              - libraries/RTC/examples/RTC_NTPSync
-              - libraries/RTC/examples/RTC_Alarm
-              - libraries/SFU
-          - board:
-              fqbn: "arduino:renesas_uno:unor4wifi"
-            additional-sketch-paths: |
-              - libraries/Arduino_LED_Matrix
-              - libraries/WiFiS3
-              - libraries/OTAUpdate
-          - board:
-              fqbn: "arduino-git:renesas:unor4wifi"
-            additional-sketch-paths: |
-              - libraries/Arduino_LED_Matrix
-              - libraries/WiFiS3
-              - libraries/OTAUpdate
-              - libraries/OPAMP
-              - libraries/SoftwareATSE
-              - libraries/Preferences
+         
           - board:
               fqbn: "arduino-git:renesas:minima"
             additional-sketch-paths: |
