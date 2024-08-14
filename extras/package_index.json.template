@@ -10,7 +10,7 @@
       },
       "platforms": [
         {
-          "name": "Arduino UNO R4 Boards",
+          "name": "Seeed Studio XIAO RA4M1",
           "architecture": "renesas_uno",
           "version": "%%VERSION%%",
           "category": "Arduino",
@@ -23,11 +23,8 @@
           },
           "boards": [
             {
-              "name": "Arduino UNO R4 Minima"
+              "name": "Seeed Studio XIAO RA4M1"
             },
-            {
-              "name": "Arduino UNO R4 WiFi"
-            }
           ],
           "toolsDependencies": [
             {
@@ -58,53 +55,7 @@
             }
           ]
         },
-        {
-          "name": "Arduino Renesas Portenta Boards",
-          "architecture": "renesas_portenta",
-          "version": "%%VERSION%%",
-          "category": "Arduino",
-          "url": "http://downloads.arduino.cc/cores/staging/%%FILENAME_PORTENTA%%",
-          "archiveFileName": "%%FILENAME_PORTENTA%%",
-          "checksum": "SHA-256:%%CHECKSUM_PORTENTA%%",
-          "size": "%%SIZE_PORTENTA%%",
-          "help": {
-            "online": "https://github.com/arduino/ArduinoCore-renesas/issues"
-          },
-          "boards": [
-            {
-              "name": "Arduino Portenta C33"
-            }
-          ],
-          "toolsDependencies": [
-            {
-              "packager": "arduino",
-              "name": "openocd",
-              "version": "0.11.0-arduino2"
-            },
-            {
-              "packager": "arduino",
-              "name": "arm-none-eabi-gcc",
-              "version": "7-2017q4"
-            },
-            {
-              "packager": "arduino",
-              "version": "0.11.0-arduino5",
-              "name": "dfu-util"
-            },
-            {
-              "packager": "arduino",
-              "version": "1.9.1-arduino5",
-              "name": "bossac"
-            }
-          ],
-          "discoveryDependencies": [
-            {
-              "packager": "builtin",
-              "name": "dfu-discovery"
-            }
-          ]
-        }
-      ],
+
       "tools": [
         {
           "name": "dfu-util",
