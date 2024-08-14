@@ -17,7 +17,7 @@ echo $VERSION
 VARIANT=portenta
 EXCLUDE_TAGS=--exclude-tag-all=.unor4_only
 
-FILENAME=ArduinoCore-renesas_$VARIANT.tar.bz2
+FILENAME=ArduinoCore-renesas_1.2.0.tar.bz2
 
 git checkout boards.txt
 git checkout platform.txt
@@ -50,7 +50,7 @@ sed "s/%%SIZE_PORTENTA%%/${SIZE}/" > package_renesas_${VERSION}_index.json.tmp
 VARIANT=XIAORA4M1
 EXCLUDE_TAGS=--exclude-tag-all=.portenta_only
 
-FILENAME=ArduinoCore-renesas_$VARIANT.tar.bz2
+FILENAME=ArduinoCore-renesas-1.2.0.tar.bz2
 
 git checkout boards.txt
 git checkout platform.txt
