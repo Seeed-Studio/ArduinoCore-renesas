@@ -7,6 +7,7 @@ fi
 
 if [ ! -d ../ArduinoCore-API ]; then
   git clone git@github.com:arduino/ArduinoCore-API.git ../ArduinoCore-API
+  git clone https://github.com/arduino/ArduinoCore-API.git ../ArduinoCore-API
 fi
 
 VERSION=`cat platform.txt | grep "version=" | cut -f2 -d"="`
