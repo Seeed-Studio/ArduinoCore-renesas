@@ -9,7 +9,7 @@ Class=Ports
 ClassGuid={4D36E978-E325-11CE-BFC1-08002BE10318}
 Provider=%MFGNAME%
 LayoutFile=layout.inf
-CatalogFile=%MFGFILENAME%.cat
+CatalogFile=renesas.cat
 DriverVer=07/29/2018,10.0.0.0
 
 [Manufacturer]
@@ -86,12 +86,11 @@ ServiceBinary=%12%\%DRIVERFILENAME%.sys
 [SourceDisksFiles]
 [SourceDisksNames]
 [DeviceList]
-"Portenta H33"=USB_Install, USB\VID_2341&PID_0068&MI_00
-"Santiago"=USB_Install, USB\VID_2341&PID_0069&MI_00
+"Xiao RA4M1"=USB_Install, USB\VID_2886&PID_0049&MI_00
+
 
 [DeviceList.NTamd64]
-"Portenta H33"=USB_Install, USB\VID_2341&PID_0068&MI_00
-"Santiago"=USB_Install, USB\VID_2341&PID_0069&MI_00
+"Xiao RA4M1"=USB_Install, USB\VID_2886&PID_0049&MI_00
 
 ;------------------------------------------------------------------------------
 ;  String Definitions
@@ -101,6 +100,6 @@ ServiceBinary=%12%\%DRIVERFILENAME%.sys
 [Strings]
 MFGFILENAME="renesas"
 DRIVERFILENAME ="usbser"
-MFGNAME="Arduino SA"
-INSTDISK="Arduino Renesas boards Driver Installer"
+MFGNAME="Seeed Studio"
+INSTDISK="Seeed Renesas boards Driver Installer"
 SERVICE="USB RS-232 Emulation Driver"
