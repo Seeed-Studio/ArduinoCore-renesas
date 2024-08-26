@@ -1,20 +1,20 @@
 {
   "packages": [
     {
-      "name": "arduino",
-      "maintainer": "Arduino",
-      "websiteURL": "http://www.arduino.cc/",
-      "email": "packages@arduino.cc",
+      "name": "Seeeduino",
+      "maintainer": "Seeed Studio",
+      "websiteURL": "https://www.seeedstudio.com/",
+      "email": "techsupport@seeed.cc",
       "help": {
-        "online": "http://www.arduino.cc/en/Reference/HomePage"
+        "online": "https://wiki.seeedstudio.com/"
       },
       "platforms": [
         {
-          "name": "Arduino UNO R4 Boards",
+          "name": "Seeed Renesas Board",
           "architecture": "renesas_uno",
           "version": "%%VERSION%%",
           "category": "Arduino",
-          "url": "http://downloads.arduino.cc/cores/staging/%%FILENAME_UNO%%",
+          "url": "https://files.seeedstudio.com/arduino/core/renesas/%%FILENAME_UNO%%",
           "archiveFileName": "%%FILENAME_UNO%%",
           "checksum": "SHA-256:%%CHECKSUM_UNO%%",
           "size": "%%SIZE_UNO%%",
@@ -23,56 +23,7 @@
           },
           "boards": [
             {
-              "name": "Arduino UNO R4 Minima"
-            },
-            {
-              "name": "Arduino UNO R4 WiFi"
-            }
-          ],
-          "toolsDependencies": [
-            {
-              "packager": "arduino",
-              "name": "openocd",
-              "version": "0.11.0-arduino2"
-            },
-            {
-              "packager": "arduino",
-              "name": "arm-none-eabi-gcc",
-              "version": "7-2017q4"
-            },
-            {
-              "packager": "arduino",
-              "version": "0.11.0-arduino5",
-              "name": "dfu-util"
-            },
-            {
-              "packager": "arduino",
-              "version": "1.9.1-arduino5",
-              "name": "bossac"
-            }
-          ],
-          "discoveryDependencies": [
-            {
-              "packager": "builtin",
-              "name": "dfu-discovery"
-            }
-          ]
-        },
-        {
-          "name": "Arduino Renesas Portenta Boards",
-          "architecture": "renesas_portenta",
-          "version": "%%VERSION%%",
-          "category": "Arduino",
-          "url": "http://downloads.arduino.cc/cores/staging/%%FILENAME_PORTENTA%%",
-          "archiveFileName": "%%FILENAME_PORTENTA%%",
-          "checksum": "SHA-256:%%CHECKSUM_PORTENTA%%",
-          "size": "%%SIZE_PORTENTA%%",
-          "help": {
-            "online": "https://github.com/arduino/ArduinoCore-renesas/issues"
-          },
-          "boards": [
-            {
-              "name": "Arduino Portenta C33"
+              "name": "XIAO RA4M1"
             }
           ],
           "toolsDependencies": [

@@ -7,6 +7,7 @@ fi
 
 if [ ! -d ../ArduinoCore-API ]; then
   git clone git@github.com:arduino/ArduinoCore-API.git ../ArduinoCore-API
+  git clone https://github.com/arduino/ArduinoCore-API.git ../ArduinoCore-API
 fi
 
 VERSION=`cat platform.txt | grep "version=" | cut -f2 -d"="`
@@ -17,7 +18,7 @@ echo $VERSION
 VARIANT=portenta
 EXCLUDE_TAGS=--exclude-tag-all=.unor4_only
 
-FILENAME=ArduinoCore-renesas_$VARIANT-$VERSION.tar.bz2
+FILENAME=ArduinoCore-renesas_1.2.0.tar.bz2
 
 git checkout boards.txt
 git checkout platform.txt
@@ -47,10 +48,10 @@ sed "s/%%SIZE_PORTENTA%%/${SIZE}/" > package_renesas_${VERSION}_index.json.tmp
 
 #uno r4
 
-VARIANT=uno
+VARIANT=XIAORA4M1
 EXCLUDE_TAGS=--exclude-tag-all=.portenta_only
 
-FILENAME=ArduinoCore-renesas_$VARIANT-$VERSION.tar.bz2
+FILENAME=ArduinoCore-renesas-1.2.0.tar.bz2
 
 git checkout boards.txt
 git checkout platform.txt
