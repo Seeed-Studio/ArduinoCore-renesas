@@ -193,6 +193,10 @@ static const uint8_t SS  =  PIN_SPI_CS;
 #define FLASH_TOTAL_SIZE    0x2000
 #define FLASH_BLOCK_SIZE    0x400
 
+/* BAT PIN */ 
+BAT_DET_PIN      	     22
+BAT_READ_EN		     23
+
 // TODO: removeme
 #ifdef __cplusplus
 extern "C" {
