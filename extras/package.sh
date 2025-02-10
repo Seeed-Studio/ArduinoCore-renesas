@@ -30,7 +30,7 @@ sed -i 's/Arduino Renesas fsp Boards/Arduino Renesas Portenta Boards/g' platform
 
 CORE_BASE=`basename $PWD`
 cd ..
-tar $EXCLUDE_TAGS --exclude='*.vscode*' --exclude='*.tar.*' --exclude='*.json*' --exclude='*.git*' --exclude='*e2studio*' --exclude='*extras*' -cjhvf $FILENAME $CORE_BASE
+tar $EXCLUDE_TAGS --exclude='*.vscode*' --exclude='*.tar.*' --exclude='*dex.json*' --exclude='*.git*' --exclude='*e2studio*' --exclude='*extras*' -cjhvf $FILENAME $CORE_BASE
 cd -
 
 mv ../$FILENAME .
@@ -62,7 +62,7 @@ sed -i 's/Arduino Renesas fsp Boards/Arduino Renesas UNO R4 Boards/g' platform.t
 
 CORE_BASE=`basename $PWD`
 cd ..
-tar $EXCLUDE_TAGS --exclude='*.vscode*' --exclude='*.tar.*' --exclude='*.json*' --exclude='*.git*' --exclude='*e2studio*' --exclude='*extras*' -cjhvf $FILENAME $CORE_BASE
+tar $EXCLUDE_TAGS --exclude='*.vscode*' --exclude='*.tar.*' --exclude='*dex.json*' --exclude='*.git*' --exclude='*e2studio*' --exclude='*extras*' -cjhvf $FILENAME $CORE_BASE
 cd -
 
 mv ../$FILENAME .
