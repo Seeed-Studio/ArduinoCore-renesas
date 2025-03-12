@@ -156,7 +156,10 @@ void CWifi::setHostname(const char* name) {
 /* -------------------------------------------------------------------------- */
 int CWifi::disconnect() {
 /* -------------------------------------------------------------------------- */   
-   CLwipIf::getInstance().disconnectFromAp();
+   if(CLwipIf::getInstance().disconnectFromAp() == ESP_CONTROL_OK) {
+      return 1;
+   }
+   return 0;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -168,12 +171,13 @@ void CWifi::end(void) {
 /* -------------------------------------------------------------------------- */
 uint8_t* CWifi::macAddress(uint8_t* mac) {
 /* -------------------------------------------------------------------------- */   
-   if(ni != nullptr) {
-      if(ni->getMacAddress(mac) == WL_MAC_ADDR_LENGTH) {
-         return mac;
-      }
+   if(ni == nullptr) {
+      ni = CLwipIf::getInstance().get(NI_WIFI_STATION);
    }
-   memset(mac,0x00,6);
+
+   if(ni->getMacAddress(mac) != WL_MAC_ADDR_LENGTH) {
+      memset(mac, 0x00, 6);
+   }
    return mac;
 }
 
@@ -317,10 +321,31 @@ unsigned long CWifi::getTime() {
    return 0;
 }
 
-
-
 void CWifi::setTimeout(unsigned long timeout) {
    (void)(timeout);  
+}
+
+/* -------------------------------------------------------------------------- */
+int CWifi::ping(IPAddress ip, uint8_t ttl) {
+/* -------------------------------------------------------------------------- */
+   return CLwipIf::getInstance().ping(ip, ttl);
+}
+
+/* -------------------------------------------------------------------------- */
+int CWifi::ping(const String &hostname, uint8_t ttl)
+/* -------------------------------------------------------------------------- */
+{
+   return ping(hostname.c_str(), ttl);
+}
+
+/* -------------------------------------------------------------------------- */
+int CWifi::ping(const char* host, uint8_t ttl) {
+/* -------------------------------------------------------------------------- */
+   IPAddress ip;
+   if(hostByName(host,ip)) {
+      return CLwipIf::getInstance().ping(ip, ttl);
+   }
+   return -1;
 }
 
 

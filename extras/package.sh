@@ -26,6 +26,7 @@ git checkout platform.txt
 sed -i 's/minima./#minima./g' boards.txt
 sed -i 's/unor4wifi./#unor4wifi./g' boards.txt
 sed -i 's/muxto./#muxto./g' boards.txt
+sed -i 's/opta_/#opta_/g' boards.txt
 sed -i 's/Arduino Renesas fsp Boards/Arduino Renesas Portenta Boards/g' platform.txt
 
 CORE_BASE=`basename $PWD`
@@ -58,6 +59,7 @@ git checkout platform.txt
 
 sed -i 's/portenta_c33./#portenta_c33./g' boards.txt
 sed -i 's/muxto./#muxto./g' boards.txt
+sed -i 's/opta_/#opta_/g' boards.txt
 sed -i 's/Arduino Renesas fsp Boards/Arduino Renesas UNO R4 Boards/g' platform.txt
 
 CORE_BASE=`basename $PWD`

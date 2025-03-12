@@ -19,6 +19,9 @@
 /* ########################################################################## */
 #include "QSPIFlashBlockDevice.h"
 
+#define debug_if rns_storage_dbg_if
+#define debug_mem rns_storage_dbg_mem
+
 #ifdef HAS_QSPI
 
 // To enable debug set QSPIF_DBG to 1 and make sure STORAGE_DEBUG is defined
@@ -284,7 +287,7 @@ int QSPIFlashBlockDevice::write(const void *buffer, bd_addr_t add, bd_size_t _si
       R_QSPI_BankSet(&ctrl, bank);
       rv = R_QSPI_Write(&ctrl, (uint8_t *)(buffer), (uint8_t*)address, chunk);
       address += chunk;
-      buffer += chunk;
+      buffer = (uint8_t *)(buffer) + chunk;
 
       if(rv == FSP_SUCCESS) {
          rv = get_flash_status();
@@ -325,7 +328,7 @@ int QSPIFlashBlockDevice::erase(bd_addr_t add, bd_size_t _size) {
 
    uint32_t num_of_blocks = (_size / erase_block_size);
 
-   for(int i = 0; i < num_of_blocks && rv == FSP_SUCCESS; i++) {
+   for(uint32_t i = 0; i < num_of_blocks && rv == FSP_SUCCESS; i++) {
       /* set bank */
       uint32_t bank = add / READ_PAGE_SIZE;  
       uint32_t address = base_address + ((add + i * erase_block_size) % READ_PAGE_SIZE);  

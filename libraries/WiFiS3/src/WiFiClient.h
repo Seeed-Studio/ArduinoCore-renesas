@@ -76,8 +76,6 @@ protected:
   std::shared_ptr<FifoBuffer<uint8_t,RX_BUFFER_DIM>> rx_buffer;
   int _read();
   void read_if_needed(size_t s);
-  bool destroy_at_distructor;
-
 
 };
 
